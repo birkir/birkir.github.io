@@ -1,25 +1,44 @@
 {
-  "name": "ueno-gatsby-starter",
-  "description": "Opinionated Gatsby starter by Ueno",
+  "name": "birkir-github-io",
+  "description": "My personal blog",
   "version": "1.0.0",
   "license": "MIT",
-  "keywords": ["gatsby", "starter", "react", "typescript", "gatsby-starter", "ueno"],
-  "contributors": [
-    "Birkir Gudjonsson <birkir.gudjonsson@gmail.com>",
-    "Jérémy Barbet <jeremgraph@gmail.com>"
+  "keywords": [
+    "birkir",
+    "blog",
+    "gatsby",
+    "typescript",
+    "prime"
   ],
+  "author": "Birkir Gudjonsson <birkir.gudjonsson@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ueno-llc/ueno-gatsby-starter"
+    "url": "https://github.com/birkir/birkir.github.io"
   },
   "scripts": {
     "dev": "gatsby develop",
     "build": "gatsby build",
     "start": "gatsby serve --port ${PORT:-3000}",
     "clean": "rimraf .cache public",
+    "prettier": "prettier --write '**/*.{json,md,js,jsx,ts,tsx}'",
     "lint": "npm run tslint && npm run stylelint",
     "tslint": "tslint --fix 'src/**/*.{ts,tsx}' -p .",
     "stylelint": "stylelint 'src/**/*.scss' --syntax scss"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5"
   },
   "dependencies": {
     "gatsby": "2.0.91",
@@ -37,9 +56,12 @@
     "gsap": "2.0.2",
     "gsap-tools": "1.0.9",
     "lodash": "4.17.11",
+    "prismjs": "1.15.0",
     "react": "16.8.0",
     "react-dom": "16.8.0",
-    "react-helmet": "5.2.0"
+    "react-helmet": "5.2.0",
+    "react-markdown": "4.0.6",
+    "react-prism": "4.3.2"
   },
   "devDependencies": {
     "@babel/core": "7.2.2",
@@ -51,6 +73,9 @@
     "@types/react-helmet": "5.0.8",
     "@ueno/stylelint-config": "1.1.2",
     "@ueno/tslint-config": "1.0.3",
+    "husky": "1.3.1",
+    "lint-staged": "8.1.5",
+    "prettier": "1.16.4",
     "rimraf": "2.6.3",
     "stylelint": "9.9.0",
     "tslint": "5.12.1",

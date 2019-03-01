@@ -1,10 +1,8 @@
-import * as React from 'react';
-
-import { Link } from 'components/link/Link';
-
+import { Link } from 'gatsby';
+import React from 'react';
 import s from './Button.scss';
 
-interface IButtonProps {
+interface ButtonProps {
   to?: string;
   disabled?: boolean;
   children: React.ReactNode;
@@ -12,19 +10,33 @@ interface IButtonProps {
   [key: string]: any;
 }
 
-export const Button = ({ to, children, className, disabled, ...rest }: IButtonProps) => {
+export const Button = ({
+  to,
+  children,
+  className,
+  disabled,
+  ...rest
+}: ButtonProps) => {
   const passProps = { ...rest };
-  const isLink = (typeof to !== 'undefined');
+  const isLink = typeof to !== 'undefined';
   const isExternal = isLink && /^((https?:)?\/\/|[0-9a-zA-Z]+:)/.test(to || '');
 
   passProps.className = s(s.button, className, { disabled });
 
   if (isExternal) {
-    return <a target="_blank" rel="noopener noreferrer" href={to} {...passProps}>{children}</a>;
+    return (
+      <a target="_blank" rel="noopener noreferrer" href={to} {...passProps}>
+        {children}
+      </a>
+    );
   }
 
   if (isLink) {
-    return <Link to={to || '#'} {...passProps}>{children}</Link>;
+    return (
+      <Link to={to || '#'} {...passProps}>
+        {children}
+      </Link>
+    );
   }
 
   passProps.disabled = disabled;

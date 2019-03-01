@@ -1,25 +1,19 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
-
-import { helmet } from 'utils/helmet';
-import { Header } from 'components/header/Header';
-import { Devtools } from 'components/devtools/Devtools';
-
+import { helmet } from '../../utils/helmet';
+import { Footer } from '../footer/Footer';
+import { Header } from '../header/Header';
 import s from './AppLayout.scss';
 
-interface IAppLayoutProps {
+interface AppLayoutProps {
   children: React.ReactNode;
 }
 
-const isDev = process.env.NODE_ENV === 'development';
-
-export default ({ children }: IAppLayoutProps) => (
+export default ({ children }: AppLayoutProps) => (
   <div className={s.layout}>
     <Helmet {...helmet} />
     <Header />
-
     {children}
-
-    {isDev && <Devtools />}
+    <Footer />
   </div>
 );

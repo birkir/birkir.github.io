@@ -11,6 +11,14 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
+      resolve: 'gatsby-source-graphql-universal',
+      options: {
+        typeName: 'Prime',
+        fieldName: 'prime',
+        url: 'https://prime.birkir.dev/graphql',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'ueno-gatsby-starter',
@@ -37,4 +45,4 @@ module.exports = {
       },
     },
   ],
-}
+};

@@ -1,14 +1,13 @@
-import * as React from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
-
-import { Segment } from 'components/segment/Segment';
+import { Segment } from '../components/segment/Segment';
 
 export default () => (
   <>
-    <Helmet title="About" />
+    <Helmet title="about birkir.dev" />
 
     <Segment>
-      <h1>About</h1>
+      <h1>Noop</h1>
     </Segment>
   </>
 );

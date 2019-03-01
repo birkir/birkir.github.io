@@ -1,29 +1,14 @@
-import * as React from 'react';
-
-import { Link } from 'components/link/Link';
-
-import Logo from 'assets/svg/logo.svg';
-
+import { Link } from 'gatsby';
+import React from 'react';
 import s from './Header.scss';
 
-interface IHeaderProps {
-  children?: React.ReactNode;
-}
-
-export const Header = ({ children }: IHeaderProps) => (
+export const Header = () => (
   <header className={s.header}>
-    <div className={s.header__container}>
-      <div className={s.header__content}>
-        <Link
-          to="/"
-          className={s.header__logo}
-        >
-          <Logo className={s.header__logoSvg} />
+    <div className={s.container}>
+      <div className={s.content}>
+        <Link to="/" className={s.logo}>
+          birkir.dev
         </Link>
-
-        <div className={s.header__navigation}>
-          {children}
-        </div>
       </div>
     </div>
   </header>

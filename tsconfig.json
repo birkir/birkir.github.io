@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     // Base directory to resolve non-relative module names.
-    "baseUrl": "./src",
+    // "baseUrl": "./src",
     // Specify module code generation
     "module": "commonjs",
     // Generates corresponding '.map' file.

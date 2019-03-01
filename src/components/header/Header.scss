@@ -3,31 +3,26 @@
 .header {
   display: block;
 
-  margin: 0 0 $gutter;
-
   background-color: #fff;
+}
 
-  &__container {
-    @include container;
-  }
+.container {
+  @include container;
+}
 
-  &__content {
-    display: flex;
-    align-items: center;
+.content {
+  display: flex;
+  align-items: center;
 
-    padding: $gutter 0;
+  padding: $gutter 0;
+}
 
-    border-bottom: 1px solid #ccc;
-  }
+.logo {
+  font-size: 21.8px;
+  font-weight: bold;
 
-  &__logo {
-    &Svg {
-      display: block;
-    }
-  }
+  text-decoration: none;
+  letter-spacing: 0.1px;
 
-  &__navigation {
-    display: flex;
-    margin-left: auto;
-  }
+  color: rgb(28, 41, 105);
 }

@@ -1,13 +1,10 @@
-import * as React from 'react';
-
+import React from 'react';
 import s from './Container.scss';
 
-interface IContainerProps {
+interface ContainerProps {
   children: React.ReactNode;
 }
 
-export const Container = ({ children }: IContainerProps) => (
-  <section className={s.container}>
-    {children}
-  </section>
+export const Container = ({ children }: ContainerProps) => (
+  <section className={s.container}>{children}</section>
 );

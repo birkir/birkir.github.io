@@ -1,21 +1,55 @@
-import * as React from 'react';
-import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
+import React from 'react';
+import { ArticlePreview } from '../components/article-preview/ArticlePreview';
 
-import { Segment } from 'components/segment/Segment';
-import { Button } from 'components/button/Button';
+export const query = graphql`
+  fragment ArticleBodyFragment on Prime_Article_body {
+    ... on Prime_Code {
+      source
+      language
+    }
 
-export default () => (
+    ... on Prime_Quote {
+      content
+      author {
+        name
+        photo
+      }
+    }
+
+    ... on Prime_Text {
+      content
+    }
+  }
+
+  query {
+    prime {
+      allArticle {
+        edges {
+          node {
+            id
+            slug
+            title
+            body {
+              ...ArticleBodyFragment
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export default ({
+  data: {
+    prime: {
+      allArticle: { edges },
+    },
+  },
+}: any) => (
   <>
-    <Helmet title="Home" />
-
-    <Segment>
-      <h1>Hello world!</h1>
-    </Segment>
-
-    <Segment>
-      <Button>Button</Button>
-      <Button to="http://ueno.co">Ueno.co</Button>
-      <Button to="/about">About</Button>
-    </Segment>
+    {edges.map(({ node }: any) => (
+      <ArticlePreview key={node.id} {...node} />
+    ))}
   </>
 );
