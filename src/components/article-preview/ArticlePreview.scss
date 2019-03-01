@@ -1,0 +1,17 @@
+@import '~styles/config';
+
+.articlePreview {
+  @include container;
+
+  margin-bottom: 16px;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(32, 64, 192);
+}

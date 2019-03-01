@@ -13,7 +13,7 @@ export default ({ children }: AppLayoutProps) => (
   <div className={s.layout}>
     <Helmet {...helmet} />
     <Header />
-    {children}
+    <div className={s.flex}>{children}</div>
     <Footer />
   </div>
 );

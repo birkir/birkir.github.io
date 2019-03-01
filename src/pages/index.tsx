@@ -24,12 +24,13 @@ export const query = graphql`
 
   query {
     prime {
-      allArticle {
+      allArticle(sort: [{ date: DESC }]) {
         edges {
           node {
             id
             slug
             title
+            date
             body {
               ...ArticleBodyFragment
             }
