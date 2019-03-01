@@ -1,7 +1,0 @@
-{
-  "extends": "@ueno/tslint-config/react",
-  "rules": {
-    "interface-name": false,
-    "origin-ordered-imports": false
-  }
-}

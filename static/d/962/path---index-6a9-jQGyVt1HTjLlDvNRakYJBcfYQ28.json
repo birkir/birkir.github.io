@@ -1,0 +1,42 @@
+{
+  "data": {
+    "prime": {
+      "allArticle": {
+        "edges": [
+          {
+            "node": {
+              "id": "0qnAEKDkYA",
+              "slug": "lorem-ipsum-dolor-sit-amet",
+              "title": "Lorem ipsum dolor sit amet",
+              "body": [
+                {
+                  "__typename": "Prime_Text",
+                  "content": "This is my text block\n \nand some more lines\n \n\nThen this."
+                },
+                {
+                  "__typename": "Prime_Quote",
+                  "content": "Dingo bingo foo",
+                  "author": {
+                    "name": "John Doe",
+                    "photo": "https://randomuser.me/api/portraits/men/12.jpg"
+                  }
+                },
+                {
+                  "__typename": "Prime_Code",
+                  "source": "<?php\necho 'hello world';\n?>",
+                  "language": "php"
+                },
+                {
+                  "__typename": "Prime_Code",
+                  "source": "import { foo } from './foo';\n\nif (foo) {\n  console.log(foo);\n}",
+                  "language": "typescript"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "pageContext": {}
+}
