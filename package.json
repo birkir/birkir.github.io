@@ -18,7 +18,7 @@
   "scripts": {
     "dev": "gatsby develop",
     "build": "gatsby build",
-    "deploy": "yarn build && gh-pages -d public -b master",
+    "deploy": "yarn build && cp CNAME public/CNAME && gh-pages -d public -b master",
     "start": "gatsby serve --port ${PORT:-3000}",
     "clean": "rimraf .cache public",
     "prettier": "prettier --write '**/*.{json,md,js,jsx,ts,tsx}'",
